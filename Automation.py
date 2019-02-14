@@ -13,6 +13,7 @@ def csv_file_read(csv_file):
         for row in readCSV:
             if row[0].startswith('#'): #Skip comment lines and header
                 continue
+            #Attribute key word is intentionally used.
             Attribute1 = row[0]
             Attribute2 = row[1]
             AttributeX = row[2]

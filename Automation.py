@@ -16,21 +16,20 @@ def csv_file_read(csv_file):
             #Attribute key word is intentionally used.
             Attribute1 = row[0]
             Attribute2 = row[1]
-            AttributeX = row[2]
-            attribute3 = row[3]
-            Attribute3 = ' , '.join([x.strip() for x in sorted(attribute3.split(','))])
-            Attribute4 = row[4]
-            Attribute5 = row[5]
-            attribute6 = row[6]
-            Attribute6 = ' & '.join([x.strip() for x in sorted(attribute6.replace('|','&').split('&'))])
-            Attribute7 = row[7]
-            Attribute8 = row[8]
-            Attribute9 = row[9]
-            Attribute10 = row[10]
-            Attribute11 = row[11]
-            Attribute12 = row[12]
-
-            StreamList = [Attribute1, Attribute2, AttributeX, Attribute3, Attribute4, Attribute5, Attribute6, Attribute7, Attribute8, Attribute9, Attribute10, Attribute11, Attribute12]
+            Attribute3 = row[2]
+            attribute4 = row[3]
+            Attribute4 = ' , '.join([x.strip() for x in sorted(attribute3.split(','))])
+            Attribute5 = row[4]
+            Attribute6 = row[5]
+            attribute7 = row[6]
+            Attribute7 = ' & '.join([x.strip() for x in sorted(attribute6.replace('|','&').split('&'))])
+            Attribute8 = row[7]
+            Attribute9 = row[8]
+            Attribute10 = row[9]
+            Attribute11 = row[10]
+            Attribute12 = row[11]
+            Attribute13 = row[12]
+            StreamList = [Attribute1, Attribute2, Attribute3, Attribute4, Attribute5, Attribute6, Attribute7, Attribute8, Attribute9, Attribute10, Attribute11, Attribute12, Attribute13]
             resultList = [s.strip() for s in StreamList]
 
             yield resultList
@@ -82,8 +81,9 @@ def segregate_decorator(function):
 @segregate_decorator
 def segregate(type_list):
     group = defaultdict(list)
+    #Some attributes are not considered as it is unique for every row.
     for object in type_list:
-        group[object[0], object[2], object[4], object[5], object[7], object[8], object[9], object[10], object[11], object[12]].append(object) #without dependency
+        group[object[0], object[2], object[4], object[5], object[7], object[8], object[9], object[10], object[11], object[12]].append(object)
     segregate_list = group.values()
     return segregate_list
 

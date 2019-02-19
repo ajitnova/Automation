@@ -1,9 +1,10 @@
 # Automation
 
 
-###This automation script takes a csv file and groups on the basis of different attributes.
+An automation script that takes a csv file and groups rows on the basis of different attributes.
+Some attributes have constrains and interdependancies.
 
-#This code snippet give an overview of my coding style.
+Constrains are handled by OrderedDict key -> Value.
+Interdependancies are handled by Recurce function.
 
-Since Python is an elegant and readable langague,
-I prefer to go complex rather than complicated.
+Complex is better than complicated.
